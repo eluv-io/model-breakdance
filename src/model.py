@@ -24,7 +24,7 @@ def get_video_duration(path):
     return float(duration)
 
 class WindmillDetector(VideoModel):
-    def __init__(self, path=config["storage"]["model_path"]):
+    def __init__(self, path=config["container"]["model_path"]):
         self.path = path
 
     def tag(self, video_path: str) -> List[VideoTag]:

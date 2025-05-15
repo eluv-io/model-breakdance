@@ -1,7 +1,7 @@
 storage:
-  model_path: /ml/models/breakdance/classifier.pkl
+  model_path: /ml/models/breakdance
 container:
-  model_path: models 
+  model_path: models/classifier.pkl
 
 runtime:
   default: {}

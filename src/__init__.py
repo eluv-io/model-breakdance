@@ -3,7 +3,7 @@ import os
 def setup_checkpoints_symlink():
     target = "~/.cache/imagebind/checkpoints"
     link_name = ".checkpoints"
-    os.makedirs(target, exist_ok=True)
+    os.makedirs(os.path.expanduser(target), exist_ok=True)
 
     if os.path.islink(link_name) or os.path.isdir(link_name):
         return  # already set

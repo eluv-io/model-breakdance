@@ -16,6 +16,8 @@ RUN ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 ARG SSH_AUTH_SOCK
 ENV SSH_AUTH_SOCK ${SSH_AUTH_SOCK}
 
+COPY models ./models
+
 COPY setup.py .
 RUN mkdir -p src
 

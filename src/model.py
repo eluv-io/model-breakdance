@@ -28,7 +28,10 @@ class WindmillDetector(VideoModel):
         self.path = path
 
     def tag(self, video_path: str) -> List[VideoTag]:
-        label, _ = self._embedPredict(video_path)
+        label, cls = self._embedPredict(video_path)
+        if cls == 0:
+            # negative class
+            return []
         end_time = int(get_video_duration(video_path) * 1000)  # Convert to milliseconds
         return [VideoTag(text=label, confidence=1.0, start_time=0, end_time=end_time)]
 

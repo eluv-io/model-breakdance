@@ -1,9 +1,9 @@
 import os
 
 def setup_checkpoints_symlink():
-    target = "~/.cache/imagebind/checkpoints"
+    target = os.path.expanduser("~/.cache/imagebind/checkpoints")
     link_name = ".checkpoints"
-    os.makedirs(os.path.expanduser(target), exist_ok=True)
+    os.makedirs(target, exist_ok=True)
 
     if os.path.islink(link_name) or os.path.isdir(link_name):
         return  # already set
@@ -11,7 +11,7 @@ def setup_checkpoints_symlink():
     if os.path.exists(link_name):
         raise RuntimeError(f"{link_name} exists and is not a symlink")
 
-    os.symlink(target, link_name)
+    os.symlink(target, link_name, target_is_directory=True)
 
 # imagebind hardcodes the checkpoints to working dir, so we link it to ~/.cache which will be mounted
 # in the container

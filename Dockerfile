@@ -23,6 +23,8 @@ RUN mkdir -p src
 
 RUN /opt/conda/envs/mlpod/bin/pip install .
 
+RUN pip install 'numpy<2'
+
 COPY src ./src
 COPY config.yml run.py config.py .
 

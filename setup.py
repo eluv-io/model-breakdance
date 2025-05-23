@@ -7,6 +7,7 @@ setup(
         install_requires=[
             'opencv-python',
             'setproctitle',
+            'loguru',
             'common_ml @ git+ssh://git@github.com/qluvio/common-ml.git#egg=common_ml',
             'scikit-learn',
             'imagebind @ git+ssh://git@github.com/facebookresearch/ImageBind.git#egg=imagebind',

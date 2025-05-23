@@ -1,5 +1,6 @@
 import os
 
+
 def setup_checkpoints_symlink():
     target = os.path.expanduser("~/.cache/imagebind/checkpoints")
     link_name = ".checkpoints"

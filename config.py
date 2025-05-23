@@ -1,6 +1,8 @@
-import yaml
 import os
 from typing import Any
+
+import yaml
+
 
 def load_config() -> Any:   
     with open('config.yml', 'r') as f:

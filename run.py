@@ -1,15 +1,16 @@
 
 import argparse
-import os
 import json
+import os
 from typing import List
+
 import setproctitle
-
-from common_ml.utils import nested_update
 from common_ml.model import default_tag
+from common_ml.utils import nested_update
 
-from src.model import WindmillDetector
 from config import config
+from src.model import WindmillDetector
+
 
 # Generate tag files from a list of video/image files and a runtime config
 # Runtime config follows the schema found in celeb.model.RuntimeConfig
